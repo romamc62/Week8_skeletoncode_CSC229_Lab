@@ -11,10 +11,32 @@ package com.mycompany.week8_skeletoncode_lab;
 public class Problem01 {
     
     public static long getSumOfPrimes(int n){
-    // Todo 04: Develop a method that returns the sum of the prime numbers between 1 and n
-    //          Test your solution
-    //          Analyze its space and time  
-    
+        long sum = 0;
+
+        boolean isPrime = true;
+        for (int i = 2; i <= n; i++) {
+            isPrime = true;
+            for (int j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                sum += i;
+            }
+        }
+
+        return sum;
     }
-    
+    //          Analyze its space and time
+    //Time is O(N sqrt n), space is O(1)
+    public static void main(String[] args) {
+        int n = 20;
+
+        long sum = getSumOfPrimes(n);
+
+        System.out.println("Sum of numbers between 1 and " + n + ": " + sum);
+
+    }
 }

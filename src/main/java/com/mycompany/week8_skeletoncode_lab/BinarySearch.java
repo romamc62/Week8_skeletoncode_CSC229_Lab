@@ -27,7 +27,18 @@ public class BinarySearch {
         }
         return index;
     }
-    //ToDo 2: Call the above method and test the algorithm  
-    // provide time and space analysis 
+    public static void main(String[] args) {
+        int[] sortedArray = {1, 3, 5, 7, 9, 11, 13};
+        int key = 7;
+        int low = 0;
+        int high = sortedArray.length - 1;
+        int index = runBinarySearchIteratively(sortedArray, key, low, high);
+        if (index != Integer.MAX_VALUE) {
+            System.out.println("Element found at index " + index);
+        } else {
+            System.out.println("Element not found");
+        }
+    // provide time and space analysis
+        //Time complexity is O(log n), Space is O(1)
 
 }
